@@ -15,11 +15,20 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: {
+    opacity: 0,
+    y: 28,
+    rotateX: 5,
+    scale: 0.985,
+    transformPerspective: 1000,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    rotateX: 0,
+    scale: 1,
+    transformPerspective: 1000,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -52,10 +61,34 @@ export const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    const subjectText = formState.subject.trim() || 'Hiring & Project Management Opportunity - Syed Thousif';
+    const bodyContent = `Dear Syed Thousif,
+
+I am reaching out regarding a project management / leadership opportunity with our team.
+
+Contact Details:
+• Name: ${formState.name}
+• Email: ${formState.email}
+• Subject: ${subjectText}
+
+Message:
+${formState.message}
+
+Looking forward to connecting with you.
+
+Best regards,
+${formState.name}`;
+
+    const mailtoUrl = `mailto:${profileData.email}?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyContent)}`;
+
+    // Immediately redirect user's device to their default email client with all details pre-filled
+    window.location.href = mailtoUrl;
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-    }, 600);
+    }, 400);
   };
 
   return (
@@ -311,34 +344,35 @@ export const Contact: React.FC = () => {
 
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
-                  <div className="w-12 h-12 border border-emerald-500 bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center">
+                  <div className="w-12 h-12 border border-emerald-500 bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center shadow-xs">
                     <Check className="w-6 h-6" />
                   </div>
                   <h4 className="text-2xl font-bold text-[#0F172A] font-editorial">
-                    Message Prepared
+                    Redirecting to Your Email Client
                   </h4>
-                  <p className="text-sm text-slate-900 max-w-md mx-auto leading-relaxed">
-                    Thank you, <strong>{formState.name || 'Visitor'}</strong>. Your message draft is ready. You can also send directly via your email client.
+                  <p className="text-sm text-slate-900 max-w-md mx-auto leading-relaxed font-medium">
+                    Your message draft has been formatted for <strong>{profileData.email}</strong>. If your email app did not open automatically, click the button below:
                   </p>
-                  <div className="pt-4 flex justify-center gap-4">
+                  <div className="pt-4 flex flex-wrap justify-center gap-3">
                     <a
                       href={`mailto:${profileData.email}?subject=${encodeURIComponent(
-                        formState.subject || 'Portfolio Inquiry'
+                        formState.subject || 'Hiring Inquiry - Syed Thousif'
                       )}&body=${encodeURIComponent(
-                        `From: ${formState.name} (${formState.email})\n\nMessage:\n${formState.message}`
+                        `Dear Syed Thousif,\n\nI am reaching out regarding a project management / leadership opportunity.\n\nSender: ${formState.name} (${formState.email})\n\nMessage:\n${formState.message}\n\nBest regards,\n${formState.name}`
                       )}`}
-                      className="px-6 py-3 bg-[#B8860B] hover:bg-[#996e06] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs"
+                      className="px-6 py-3 bg-[#0F172A] hover:bg-[#1E293B] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs flex items-center gap-2"
                     >
-                      Send via Email App
+                      <Mail className="w-3.5 h-3.5 text-[#B8860B]" />
+                      <span>Open Mail Client Again</span>
                     </a>
                     <button
                       onClick={() => {
                         setSubmitted(false);
                         setFormState({ name: '', email: '', subject: '', message: '' });
                       }}
-                      className="px-6 py-3 border border-slate-300 bg-white text-slate-800 text-xs font-bold uppercase tracking-wider hover:border-[#0F172A] hover:text-[#0F172A] transition-colors"
+                      className="px-6 py-3 border border-slate-300 bg-white text-slate-800 text-xs font-bold uppercase tracking-wider hover:border-[#0F172A] hover:text-[#0F172A] transition-colors cursor-pointer"
                     >
-                      Reset Form
+                      New Message
                     </button>
                   </div>
                 </div>

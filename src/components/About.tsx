@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { TrendingUp, ShieldCheck, Sparkles, Building2, Briefcase, GraduationCap, Award, CheckCircle2, UserCheck, BookOpen } from 'lucide-react';
+import { TrendingUp, ShieldCheck, Sparkles, UserCheck } from 'lucide-react';
 import { profileData } from '../data/profile';
+import executiveSuiteImg from '../assets/images/executive_office_suite_1787015239261.jpg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -15,12 +16,99 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: {
+    opacity: 0,
+    y: 28,
+    rotateX: 5,
+    scale: 0.985,
+    transformPerspective: 1000,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    rotateX: 0,
+    scale: 1,
+    transformPerspective: 1000,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
   },
+};
+
+interface SplitTypeRevealProps {
+  text: string;
+  className?: string;
+  delay?: number;
+  boldPhrases?: string[];
+}
+
+const SplitTypeReveal: React.FC<SplitTypeRevealProps> = ({
+  text,
+  className = '',
+  delay = 0,
+  boldPhrases = [],
+}) => {
+  const words = text.split(' ');
+
+  return (
+    <motion.span
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-50px' }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.016,
+            delayChildren: delay,
+          },
+        },
+      }}
+      className={`inline ${className}`}
+    >
+      {words.map((word, i) => {
+        // Check if this word is part of any designated bold phrase
+        const cleanWord = word.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+        const isBold = boldPhrases.some((phrase) =>
+          phrase
+            .toLowerCase()
+            .split(' ')
+            .some((w) => w.replace(/[^a-zA-Z0-9]/g, '') === cleanWord)
+        );
+
+        return (
+          <span
+            key={i}
+            className="inline-block whitespace-nowrap overflow-hidden mr-[0.27em] align-baseline"
+          >
+            <motion.span
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: 15,
+                  rotateX: 18,
+                  filter: 'blur(3px)',
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  rotateX: 0,
+                  filter: 'blur(0px)',
+                  transition: {
+                    duration: 0.55,
+                    ease: [0.22, 1, 0.36, 1],
+                  },
+                },
+              }}
+              className={`inline-block ${
+                isBold ? 'font-bold text-[#0F172A]' : ''
+              }`}
+            >
+              {word}
+            </motion.span>
+          </span>
+        );
+      })}
+    </motion.span>
+  );
 };
 
 export const About: React.FC = () => {
@@ -40,20 +128,20 @@ export const About: React.FC = () => {
       id="about"
       className="relative py-24 sm:py-32 border-b border-slate-200 overflow-hidden"
     >
-      {/* Parallax Background Image: Executive Boardroom with Dynamic Gradient Overlays */}
+      {/* Parallax Background Image: AI-Generated Executive Office Suite with Dynamic Gradient Overlays */}
       <motion.div
         style={{ y: backgroundY }}
         className="absolute -top-[12%] -bottom-[12%] inset-x-0 z-0 pointer-events-none will-change-transform"
       >
         <img
-          src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2200&q=90"
-          alt="Executive Boardroom Architecture"
-          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.06]"
+          src={executiveSuiteImg}
+          alt="Executive Suite & Strategic Command Workspace"
+          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.05]"
           referrerPolicy="no-referrer"
         />
         {/* Dynamic Multi-Stop Gradient: reveals rich architectural depth while protecting reading contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/45 via-40% to-white/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_75%_at_25%_25%,_rgba(255,255,255,0.8)_0%,_rgba(255,255,255,0.35)_50%,_transparent_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 via-45% to-white/15" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_75%_at_25%_25%,_rgba(255,255,255,0.85)_0%,_rgba(255,255,255,0.4)_50%,_transparent_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-transparent to-white/25" />
       </motion.div>
 
@@ -107,19 +195,26 @@ export const About: React.FC = () => {
               Background &amp; Executive Philosophy
             </span>
 
-            {/* Editorial Lead Statement */}
-            <p className="text-xl sm:text-2xl md:text-3xl text-[#0F172A] leading-[1.42] sm:leading-[1.48] font-bold mb-8 font-editorial max-w-4xl tracking-[-0.01em] drop-shadow-2xs">
-              &ldquo;Combining rigorous IT project governance with frontline enterprise sales execution to turn complex technical roadmaps into tangible business outcomes.&rdquo;
-            </p>
+            {/* Editorial Lead Statement with Split Reveal Animation */}
+            <div className="text-xl sm:text-2xl md:text-3xl text-[#0F172A] leading-[1.42] sm:leading-[1.48] font-bold mb-8 font-editorial max-w-4xl tracking-[-0.01em] drop-shadow-2xs">
+              <SplitTypeReveal
+                text="“Combining rigorous IT project governance with frontline enterprise sales execution to turn complex technical roadmaps into tangible business outcomes.”"
+                delay={0.05}
+              />
+            </div>
 
-            {/* Responsive 3-Column Pillars */}
+            {/* Responsive 3-Column Pillars with Split Type Typography */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 pt-8 border-t border-slate-300/80">
               <div>
                 <h4 className="text-sm font-bold uppercase tracking-[0.08em] text-[#0F172A] mb-3 flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#B8860B]" /> Academic Rigor
                 </h4>
                 <p className="text-[0.95rem] sm:text-base text-slate-900 leading-[1.82] tracking-[0.015em]">
-                  Completed a <strong className="text-[#0F172A] font-bold">Master of Science in Project Management and Information Technology</strong> from Indiana Wesleyan University, refining expertise in project initiation, life cycles, budgeting, risk mitigation, and enterprise compliance frameworks.
+                  <SplitTypeReveal
+                    text="Completed a Master of Science in Project Management and Information Technology from Indiana Wesleyan University, refining expertise in project initiation, life cycles, budgeting, risk mitigation, and enterprise compliance frameworks."
+                    delay={0.1}
+                    boldPhrases={['Master', 'Science', 'Project', 'Management', 'Information', 'Technology']}
+                  />
                 </p>
               </div>
 
@@ -128,7 +223,11 @@ export const About: React.FC = () => {
                   <span className="w-2 h-2 bg-[#B8860B]" /> Fortune 50 Track Record
                 </h4>
                 <p className="text-[0.95rem] sm:text-base text-slate-900 leading-[1.82] tracking-[0.015em]">
-                  Drawing from high-volume technology leadership at <strong className="text-[#0F172A] font-bold">Apple</strong> and <strong className="text-[#0F172A] font-bold">Samsung Electronics</strong>, excelling in sales pipeline management, executive client relations, and cross-functional team mentorship.
+                  <SplitTypeReveal
+                    text="Drawing from high-volume technology leadership at Apple and Samsung Electronics, excelling in sales pipeline management, executive client relations, and cross-functional team mentorship."
+                    delay={0.15}
+                    boldPhrases={['Apple', 'Samsung', 'Electronics']}
+                  />
                 </p>
               </div>
 
@@ -137,7 +236,11 @@ export const About: React.FC = () => {
                   <span className="w-2 h-2 bg-[#B8860B]" /> Value Delivery
                 </h4>
                 <p className="text-[0.95rem] sm:text-base text-slate-900 leading-[1.82] tracking-[0.015em]">
-                  Leveraging this synergy of technical project discipline and customer-centric acumen to drive on-time, within-budget innovation for technology organizations across the United States.
+                  <SplitTypeReveal
+                    text="Leveraging this synergy of technical project discipline and customer-centric acumen to drive on-time, within-budget innovation for technology organizations across the United States."
+                    delay={0.2}
+                    boldPhrases={['United', 'States']}
+                  />
                 </p>
               </div>
             </div>
@@ -154,7 +257,10 @@ export const About: React.FC = () => {
                     IT Governance &amp; Compliance
                   </h4>
                   <p className="text-xs sm:text-[0.875rem] text-slate-900 mt-1.5 leading-[1.75] tracking-[0.012em] font-normal">
-                    Cyberlaw, data regulations (GDPR/HIPAA), systems risk management, and formal project lifecycle governance.
+                    <SplitTypeReveal
+                      text="Cyberlaw, data regulations (GDPR/HIPAA), systems risk management, and formal project lifecycle governance."
+                      delay={0.1}
+                    />
                   </p>
                 </div>
               </motion.div>
@@ -169,7 +275,10 @@ export const About: React.FC = () => {
                     Cross-Functional Stakeholder Alignment
                   </h4>
                   <p className="text-xs sm:text-[0.875rem] text-slate-900 mt-1.5 leading-[1.75] tracking-[0.012em] font-normal">
-                    Consistently exceeding commercial objectives, bridging technical development teams with executive stakeholders.
+                    <SplitTypeReveal
+                      text="Consistently exceeding commercial objectives, bridging technical development teams with executive stakeholders."
+                      delay={0.15}
+                    />
                   </p>
                 </div>
               </motion.div>
@@ -199,7 +308,10 @@ export const About: React.FC = () => {
                   {profileData.volunteering.role} &mdash; {profileData.volunteering.organization}
                 </h3>
                 <p className="text-xs sm:text-[0.925rem] text-slate-900 mt-2 max-w-3xl leading-[1.8] tracking-[0.012em]">
-                  {profileData.volunteering.description}
+                  <SplitTypeReveal
+                    text={profileData.volunteering.description}
+                    delay={0.1}
+                  />
                 </p>
               </div>
             </div>

@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { Briefcase, Building2, Calendar, MapPin, Award, CheckCircle2, Layers, Sparkles, BarChart3, ChevronRight, ArrowUpRight, Cpu } from 'lucide-react';
 import { profileData } from '../data/profile';
+import techBoardroomImg from '../assets/images/tech_boardroom_1787015253769.jpg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -15,11 +16,20 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: {
+    opacity: 0,
+    y: 28,
+    rotateX: 5,
+    scale: 0.985,
+    transformPerspective: 1000,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    rotateX: 0,
+    scale: 1,
+    transformPerspective: 1000,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -45,20 +55,20 @@ export const Experience: React.FC = () => {
       id="experience"
       className="relative py-24 sm:py-32 border-b border-slate-200 overflow-hidden"
     >
-      {/* Parallax Background Image: Modern Tech Corporate Hub with Dynamic Gradient Overlays */}
+      {/* Parallax Background Image: AI-Generated Agile War Room & Analytics Display Center */}
       <motion.div
         style={{ y: backgroundY }}
         className="absolute -top-[12%] -bottom-[12%] inset-x-0 z-0 pointer-events-none will-change-transform"
       >
         <img
-          src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=2200&q=90"
-          alt="Modern Corporate Innovation Center"
-          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.06]"
+          src={techBoardroomImg}
+          alt="Agile War Room & Analytics Center"
+          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.05]"
           referrerPolicy="no-referrer"
         />
         {/* Dynamic Multi-Stop Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/45 via-45% to-white/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_75%_at_30%_30%,_rgba(255,255,255,0.8)_0%,_rgba(255,255,255,0.35)_50%,_transparent_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 via-45% to-white/15" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_75%_at_30%_30%,_rgba(255,255,255,0.85)_0%,_rgba(255,255,255,0.4)_50%,_transparent_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-transparent to-white/25" />
       </motion.div>
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Linkedin, Mail, MapPin, Award, CheckCircle2, ChevronRight, FileText, Sparkles, Building2, Briefcase, GraduationCap } from 'lucide-react';
 import { profileData } from '../data/profile';
+import heroDeskSetupImg from '../assets/images/hero_desk_setup_1787015453013.jpg';
 
 interface HeroProps {
   onOpenResume: () => void;
@@ -19,11 +20,20 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: {
+    opacity: 0,
+    y: 24,
+    rotateX: 4,
+    scale: 0.985,
+    transformPerspective: 1000,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    rotateX: 0,
+    scale: 1,
+    transformPerspective: 1000,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -58,16 +68,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         className="absolute -top-[10%] -bottom-[15%] inset-x-0 z-0 pointer-events-none will-change-transform"
       >
         <img
-          src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2400&q=95"
-          alt="Personal Executive Office Suite & Workspace"
-          className="w-full h-full object-cover object-center filter brightness-[1.04] contrast-[1.06]"
+          src={heroDeskSetupImg}
+          alt="Personal Executive Desk & Ergonomic Workstation"
+          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.05]"
           referrerPolicy="no-referrer"
         />
         
         {/* Dynamic Multi-Stop Gradient Overlays: reveals personal office setup vividly while keeping text 100% legible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 via-45% to-white/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_20%_30%,_rgba(255,255,255,0.85)_0%,_rgba(255,255,255,0.4)_50%,_transparent_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-white/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 via-45% to-white/10" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_20%_30%,_rgba(255,255,255,0.85)_0%,_rgba(255,255,255,0.35)_50%,_transparent_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-white/20" />
       </motion.div>
 
       <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 sm:px-8 flex-1 flex flex-col justify-center py-8">

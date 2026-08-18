@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { GraduationCap, Award, BookOpen, CheckCircle, Calendar, Sparkles, Building2, ExternalLink } from 'lucide-react';
 import { profileData } from '../data/profile';
+import executiveLoungeImg from '../assets/images/executive_lounge_1787015267068.jpg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -15,11 +16,20 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: {
+    opacity: 0,
+    y: 28,
+    rotateX: 5,
+    scale: 0.985,
+    transformPerspective: 1000,
+  },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    rotateX: 0,
+    scale: 1,
+    transformPerspective: 1000,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -40,20 +50,20 @@ export const Education: React.FC = () => {
       id="education"
       className="relative py-24 sm:py-32 border-b border-slate-200 overflow-hidden"
     >
-      {/* Parallax Background Image: Prestigious Academic Campus with Dynamic Gradient Overlays */}
+      {/* Parallax Background Image: AI-Generated Luxury Innovation Lounge & Collaborative Space */}
       <motion.div
         style={{ y: backgroundY }}
         className="absolute -top-[12%] -bottom-[12%] inset-x-0 z-0 pointer-events-none will-change-transform"
       >
         <img
-          src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=2200&q=90"
-          alt="Academic Campus Architecture"
-          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.06]"
+          src={executiveLoungeImg}
+          alt="Open Innovation Lounge & Architectural Collaborative Hub"
+          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.05]"
           referrerPolicy="no-referrer"
         />
         {/* Dynamic Multi-Stop Gradient Overlays: reveals rich campus architecture while safeguarding reading clarity */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/45 via-45% to-white/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_75%_at_30%_30%,_rgba(255,255,255,0.8)_0%,_rgba(255,255,255,0.35)_50%,_transparent_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 via-45% to-white/15" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_75%_at_30%_30%,_rgba(255,255,255,0.85)_0%,_rgba(255,255,255,0.4)_50%,_transparent_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-transparent to-white/25" />
       </motion.div>
 
