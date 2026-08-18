@@ -136,7 +136,9 @@ export const About: React.FC = () => {
         <img
           src={executiveSuiteImg}
           alt="Executive Suite & Strategic Command Workspace"
-          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.05]"
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover object-center filter brightness-[1.04] contrast-[1.08] saturate-[1.06]"
           referrerPolicy="no-referrer"
         />
         {/* Dynamic Multi-Stop Gradient: reveals rich architectural depth while protecting reading contrast */}
@@ -145,14 +147,14 @@ export const About: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/10" />
       </motion.div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header with Staggered Motion */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
           variants={containerVariants}
-          className="mb-16 max-w-3xl"
+          className="mb-12 sm:mb-16 max-w-3xl"
         >
           <motion.span
             variants={itemVariants}
@@ -162,17 +164,17 @@ export const About: React.FC = () => {
           </motion.span>
           <motion.h2
             variants={itemVariants}
-            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#0F172A] tracking-[-0.02em] font-editorial leading-[1.18] drop-shadow-xs"
+            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-[#0A0F1D] tracking-tight font-editorial leading-[1.15] drop-shadow-xs"
           >
             Bridging Technical Project Delivery &amp; Commercial Leadership
           </motion.h2>
           <motion.div
             variants={itemVariants}
-            className="w-16 h-1 bg-[#B8860B] mt-4 mb-3 shadow-xs"
+            className="w-16 h-1.5 bg-[#B8860B] mt-4 mb-3 shadow-xs"
           />
           <motion.p
             variants={itemVariants}
-            className="text-sm sm:text-base text-slate-900 leading-[1.8] tracking-[0.015em] font-medium"
+            className="text-base sm:text-lg text-[#0A0F1D] leading-[1.7] tracking-[0.01em] font-medium"
           >
             A balanced synthesis of post-graduate IT governance rigor and Fortune 50 enterprise commercial execution.
           </motion.p>
@@ -184,19 +186,19 @@ export const About: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
           variants={containerVariants}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           {/* Main Editorial Narrative Section with Translucent Frame */}
           <motion.div
             variants={itemVariants}
-            className="border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs hover:border-[#B8860B] p-8 sm:p-12 transition-all duration-300 shadow-xs"
+            className="border-2 border-slate-300 bg-white/70 hover:bg-white/90 backdrop-blur-xs hover:border-[#B8860B] p-6 sm:p-10 md:p-12 transition-all duration-300 shadow-sm"
           >
-            <span className="inline-block text-xs font-mono uppercase tracking-[0.15em] text-slate-800 mb-6 pb-2 border-b border-slate-300/80 w-full font-bold">
+            <span className="inline-block text-xs font-mono uppercase tracking-[0.15em] text-[#0A0F1D] mb-5 sm:mb-6 pb-2 border-b border-slate-300 w-full font-bold">
               Background &amp; Executive Philosophy
             </span>
 
             {/* Editorial Lead Statement with Split Reveal Animation */}
-            <div className="text-xl sm:text-2xl md:text-3xl text-[#0F172A] leading-[1.42] sm:leading-[1.48] font-bold mb-8 font-editorial max-w-4xl tracking-[-0.01em] drop-shadow-2xs">
+            <div className="text-xl sm:text-2xl md:text-3xl text-[#0A0F1D] leading-[1.38] sm:leading-[1.45] font-black mb-8 font-editorial max-w-4xl tracking-tight">
               <SplitTypeReveal
                 text="“Combining rigorous IT project governance with frontline enterprise sales execution to turn complex technical roadmaps into tangible business outcomes.”"
                 delay={0.05}
@@ -204,12 +206,12 @@ export const About: React.FC = () => {
             </div>
 
             {/* Responsive 3-Column Pillars with Split Type Typography */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 pt-8 border-t border-slate-300/80">
-              <div>
-                <h4 className="text-sm font-bold uppercase tracking-[0.08em] text-[#0F172A] mb-3 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#B8860B]" /> Academic Rigor
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 pt-6 sm:pt-8 border-t border-slate-300">
+              <div className="p-4 bg-white/60 border border-slate-200 shadow-2xs">
+                <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#0A0F1D] mb-2.5 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 bg-[#B8860B]" /> Academic Rigor
                 </h4>
-                <p className="text-[0.95rem] sm:text-base text-slate-900 leading-[1.82] tracking-[0.015em]">
+                <p className="text-sm sm:text-base text-[#1E293B] leading-[1.75] font-medium">
                   <SplitTypeReveal
                     text="Completed a Master of Science in Project Management and Information Technology from Indiana Wesleyan University, refining expertise in project initiation, life cycles, budgeting, risk mitigation, and enterprise compliance frameworks."
                     delay={0.1}
@@ -218,11 +220,11 @@ export const About: React.FC = () => {
                 </p>
               </div>
 
-              <div>
-                <h4 className="text-sm font-bold uppercase tracking-[0.08em] text-[#0F172A] mb-3 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#B8860B]" /> Fortune 50 Track Record
+              <div className="p-4 bg-white/60 border border-slate-200 shadow-2xs">
+                <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#0A0F1D] mb-2.5 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 bg-[#B8860B]" /> Fortune 50 Track Record
                 </h4>
-                <p className="text-[0.95rem] sm:text-base text-slate-900 leading-[1.82] tracking-[0.015em]">
+                <p className="text-sm sm:text-base text-[#1E293B] leading-[1.75] font-medium">
                   <SplitTypeReveal
                     text="Drawing from high-volume technology leadership at Apple and Samsung Electronics, excelling in sales pipeline management, executive client relations, and cross-functional team mentorship."
                     delay={0.15}
@@ -231,11 +233,11 @@ export const About: React.FC = () => {
                 </p>
               </div>
 
-              <div>
-                <h4 className="text-sm font-bold uppercase tracking-[0.08em] text-[#0F172A] mb-3 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#B8860B]" /> Value Delivery
+              <div className="p-4 bg-white/60 border border-slate-200 shadow-2xs">
+                <h4 className="text-sm font-black uppercase tracking-[0.08em] text-[#0A0F1D] mb-2.5 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 bg-[#B8860B]" /> Value Delivery
                 </h4>
-                <p className="text-[0.95rem] sm:text-base text-slate-900 leading-[1.82] tracking-[0.015em]">
+                <p className="text-sm sm:text-base text-[#1E293B] leading-[1.75] font-medium">
                   <SplitTypeReveal
                     text="Leveraging this synergy of technical project discipline and customer-centric acumen to drive on-time, within-budget innovation for technology organizations across the United States."
                     delay={0.2}
@@ -246,17 +248,19 @@ export const About: React.FC = () => {
             </div>
 
             {/* Core Strategic Governance Blocks */}
-            <div className="mt-10 pt-8 border-t border-slate-300/80 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-slate-300 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               <motion.div
                 whileHover={{ y: -2 }}
-                className="flex items-start gap-4 p-5 bg-white/30 hover:bg-white/50 backdrop-blur-xs border border-slate-300/80 hover:border-[#B8860B] transition-all shadow-2xs"
+                className="flex items-start gap-4 p-5 bg-white/80 hover:bg-white backdrop-blur-xs border-2 border-slate-300 hover:border-[#B8860B] transition-all shadow-xs"
               >
-                <ShieldCheck className="w-5 h-5 text-[#B8860B] shrink-0 mt-0.5" />
+                <div className="w-10 h-10 rounded-full bg-[#B8860B]/10 border border-[#B8860B]/30 flex items-center justify-center text-[#B8860B] shrink-0 mt-0.5">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-[0.1em] text-[#0F172A]">
+                  <h4 className="text-xs sm:text-sm font-black uppercase tracking-[0.1em] text-[#0A0F1D]">
                     IT Governance &amp; Compliance
                   </h4>
-                  <p className="text-xs sm:text-[0.875rem] text-slate-900 mt-1.5 leading-[1.75] tracking-[0.012em] font-normal">
+                  <p className="text-xs sm:text-sm text-[#1E293B] mt-1.5 leading-[1.7] font-medium">
                     <SplitTypeReveal
                       text="Cyberlaw, data regulations (GDPR/HIPAA), systems risk management, and formal project lifecycle governance."
                       delay={0.1}
@@ -267,14 +271,16 @@ export const About: React.FC = () => {
 
               <motion.div
                 whileHover={{ y: -2 }}
-                className="flex items-start gap-4 p-5 bg-white/30 hover:bg-white/50 backdrop-blur-xs border border-slate-300/80 hover:border-[#B8860B] transition-all shadow-2xs"
+                className="flex items-start gap-4 p-5 bg-white/80 hover:bg-white backdrop-blur-xs border-2 border-slate-300 hover:border-[#B8860B] transition-all shadow-xs"
               >
-                <TrendingUp className="w-5 h-5 text-[#B8860B] shrink-0 mt-0.5" />
+                <div className="w-10 h-10 rounded-full bg-[#B8860B]/10 border border-[#B8860B]/30 flex items-center justify-center text-[#B8860B] shrink-0 mt-0.5">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-[0.1em] text-[#0F172A]">
+                  <h4 className="text-xs sm:text-sm font-black uppercase tracking-[0.1em] text-[#0A0F1D]">
                     Cross-Functional Stakeholder Alignment
                   </h4>
-                  <p className="text-xs sm:text-[0.875rem] text-slate-900 mt-1.5 leading-[1.75] tracking-[0.012em] font-normal">
+                  <p className="text-xs sm:text-sm text-[#1E293B] mt-1.5 leading-[1.7] font-medium">
                     <SplitTypeReveal
                       text="Consistently exceeding commercial objectives, bridging technical development teams with executive stakeholders."
                       delay={0.15}
@@ -288,26 +294,26 @@ export const About: React.FC = () => {
           {/* Supporting Community Leadership */}
           <motion.div
             variants={itemVariants}
-            className="border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs hover:border-[#B8860B] p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xs transition-all duration-300"
+            className="border-2 border-slate-300 bg-white/70 hover:bg-white/90 backdrop-blur-xs hover:border-[#B8860B] p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm transition-all duration-300"
           >
             <div className="flex items-start gap-4">
-              <div className="p-3.5 border border-slate-300/80 bg-white/40 backdrop-blur-xs text-[#B8860B] shrink-0 shadow-2xs">
+              <div className="p-3.5 border border-slate-300 bg-white text-[#B8860B] shrink-0 shadow-2xs">
                 <Sparkles className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                  <span className="text-xs font-mono uppercase tracking-[0.14em] text-[#B8860B] font-bold">
+                  <span className="text-xs font-mono uppercase tracking-[0.14em] text-[#B8860B] font-black">
                     Beyond Work &middot; Community Leadership
                   </span>
                   <span className="text-xs text-slate-400">&middot;</span>
-                  <span className="text-xs font-mono text-slate-700 font-medium">
+                  <span className="text-xs font-mono text-[#0A0F1D] font-bold">
                     {profileData.volunteering.period}
                   </span>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-[#0F172A] font-editorial tracking-[-0.01em]">
+                <h3 className="text-lg sm:text-xl font-black text-[#0A0F1D] font-editorial tracking-tight">
                   {profileData.volunteering.role} &mdash; {profileData.volunteering.organization}
                 </h3>
-                <p className="text-xs sm:text-[0.925rem] text-slate-900 mt-2 max-w-3xl leading-[1.8] tracking-[0.012em]">
+                <p className="text-xs sm:text-sm text-[#1E293B] mt-2 max-w-3xl leading-[1.75] font-medium">
                   <SplitTypeReveal
                     text={profileData.volunteering.description}
                     delay={0.1}
@@ -316,12 +322,12 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-1.5 md:max-w-xs shrink-0">
+            <div className="flex flex-wrap gap-1.5 md:max-w-xs shrink-0 w-full md:w-auto">
               {profileData.volunteering.skills.slice(0, 4).map((skill) => (
                 <motion.span
                   key={skill}
                   whileHover={{ y: -1, scale: 1.02 }}
-                  className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-[0.08em] bg-white/40 backdrop-blur-xs border border-slate-300/80 text-[#0F172A] hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs font-medium"
+                  className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-[0.08em] bg-white border border-slate-300 text-[#0A0F1D] hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs font-bold"
                 >
                   {skill}
                 </motion.span>

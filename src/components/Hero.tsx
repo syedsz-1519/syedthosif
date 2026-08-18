@@ -70,7 +70,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         <img
           src={heroDeskSetupImg}
           alt="Personal Executive Desk & Ergonomic Workstation"
-          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.05]"
+          loading="eager"
+          decoding="async"
+          className="w-full h-full object-cover object-center filter brightness-[1.04] contrast-[1.08] saturate-[1.06]"
           referrerPolicy="no-referrer"
         />
         
@@ -80,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/10" />
       </motion.div>
 
-      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 sm:px-8 flex-1 flex flex-col justify-center py-8">
+      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-4 sm:px-6 md:px-8 flex-1 flex flex-col justify-center py-6 sm:py-8">
         {/* Clean Hero Typography Container */}
         <motion.div
           variants={containerVariants}
@@ -91,21 +93,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           {/* Top Badges Row */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap items-center gap-3 mb-6"
+            className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-5 sm:mb-6"
           >
             {/* Status & Location Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/90 backdrop-blur-md border border-slate-300 shadow-xs hover:border-[#B8860B] transition-colors">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/95 backdrop-blur-md border border-slate-300 shadow-xs hover:border-[#B8860B] transition-colors">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse inline-block" />
               <MapPin className="w-3.5 h-3.5 text-[#B8860B]" />
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0F172A]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0A0F1D]">
                 Chicago, IL &middot; Available for US Roles
               </span>
             </div>
 
             {/* Ex-Apple Credential Badge */}
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-white/90 backdrop-blur-md border border-slate-300 shadow-xs hover:border-[#B8860B] transition-colors">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/95 backdrop-blur-md border border-slate-300 shadow-xs hover:border-[#B8860B] transition-colors">
               <Award className="w-3.5 h-3.5 text-[#B8860B]" />
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-800">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0A0F1D]">
                 Ex-Apple (70%+ Avg Exceed)
               </span>
             </div>
@@ -115,8 +117,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           <motion.div variants={itemVariants}>
             <h1
               id="hero-name"
-              className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] font-extrabold tracking-tight text-[#0F172A] leading-[1.06] mb-3 font-editorial drop-shadow-xs"
-              style={{ fontSize: 'clamp(2.4rem, 5.5vw + 1rem, 4.75rem)' }}
+              className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] font-black tracking-tight text-[#0A0F1D] leading-[1.05] mb-3 font-editorial drop-shadow-xs"
+              style={{ fontSize: 'clamp(2.4rem, 6vw + 0.5rem, 4.75rem)' }}
             >
               {profileData.name}
             </h1>
@@ -126,12 +128,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           {/* Rotating Specialization Title */}
           <motion.div
             variants={itemVariants}
-            className="min-h-11 sm:h-12 flex flex-wrap items-center mb-5"
+            className="min-h-12 sm:min-h-14 flex flex-wrap items-center mb-5 gap-y-1"
           >
-            <span className="text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider text-slate-800 mr-3 drop-shadow-2xs">
+            <span className="text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-wider text-[#0A0F1D] mr-2 sm:mr-3">
               Specialization:
             </span>
-            <div className="overflow-hidden inline-flex relative h-10 sm:h-11 items-center">
+            <div className="overflow-hidden inline-flex relative h-9 sm:h-11 items-center">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={titleIndex}
@@ -139,8 +141,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -24, opacity: 0 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-lg sm:text-2xl md:text-3xl font-extrabold text-[#B8860B] whitespace-nowrap drop-shadow-2xs"
-                  style={{ fontSize: 'clamp(1.15rem, 2.2vw + 0.5rem, 1.875rem)' }}
+                  className="text-lg sm:text-2xl md:text-3xl font-black text-[#B8860B] whitespace-normal sm:whitespace-nowrap"
+                  style={{ fontSize: 'clamp(1.15rem, 2.5vw + 0.4rem, 1.875rem)' }}
                 >
                   {profileData.titles[titleIndex]}
                 </motion.span>
@@ -151,15 +153,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           {/* Professional Summary Paragraph */}
           <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-slate-900 font-normal leading-relaxed mb-8 max-w-2xl"
+            className="text-base sm:text-lg md:text-xl text-[#0A0F1D] font-normal leading-relaxed mb-8 max-w-2xl"
           >
-            Master’s in IT Project Management with Fortune 50 commercial execution at <strong>Apple</strong> and <strong>Samsung</strong>. Delivering disciplined Agile governance, enterprise IT compliance, and revenue-driving cross-functional alignment.
+            Master’s in IT Project Management with Fortune 50 commercial execution at <strong className="font-bold text-[#0A0F1D]">Apple</strong> and <strong className="font-bold text-[#0A0F1D]">Samsung</strong>. Delivering disciplined Agile governance, enterprise IT compliance, and revenue-driving cross-functional alignment.
           </motion.p>
 
           {/* High-End Professional CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap items-center gap-3.5 mb-8"
+            className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-3.5 mb-8 w-full sm:w-auto"
           >
             {/* Primary CTA */}
             <motion.a
@@ -167,7 +169,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               whileTap={{ y: 0, scale: 0.99 }}
               href="#experience"
               id="hero-view-experience-btn"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#0F172A] hover:bg-[#1E293B] text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#0A0F1D] hover:bg-[#1E293B] text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md cursor-pointer min-h-[44px]"
             >
               <span>View Experience</span>
               <ChevronRight className="w-4 h-4 text-[#B8860B]" />
@@ -181,7 +183,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               target="_blank"
               rel="noopener noreferrer"
               id="hero-linkedin-btn"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#B8860B] hover:bg-[#996e06] text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#B8860B] hover:bg-[#996e06] text-white text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md min-h-[44px]"
             >
               <Linkedin className="w-4 h-4" />
               <span>LinkedIn Profile</span>
@@ -193,7 +195,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               whileTap={{ y: 0, scale: 0.99 }}
               onClick={onOpenResume}
               id="hero-resume-btn"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 border border-slate-300/80 bg-white/40 backdrop-blur-xs text-slate-800 hover:bg-white/70 hover:border-[#B8860B] text-xs sm:text-sm font-bold tracking-wider uppercase transition-all cursor-pointer shadow-xs"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 border-2 border-slate-300/90 bg-white/70 backdrop-blur-xs text-[#0A0F1D] hover:bg-white hover:border-[#B8860B] text-xs sm:text-sm font-bold tracking-wider uppercase transition-all cursor-pointer shadow-xs min-h-[44px]"
             >
               <FileText className="w-4 h-4 text-[#B8860B]" />
               <span>Full Resume</span>
@@ -203,18 +205,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           {/* Micro Highlights Row */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-bold text-slate-900 drop-shadow-2xs"
+            className="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-bold text-[#0A0F1D]"
           >
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#B8860B]" />
               Authorized to work in US
             </span>
-            <span className="text-slate-400">&bull;</span>
+            <span className="text-slate-400 hidden sm:inline">&bull;</span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#B8860B]" />
               On-site / Hybrid / Remote
             </span>
-            <span className="text-slate-400">&bull;</span>
+            <span className="text-slate-400 hidden sm:inline">&bull;</span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-[#B8860B]" />
               Agile / Scrum &amp; IT Governance
@@ -224,56 +226,71 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
       </div>
 
       {/* Metric Strip Below */}
-      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 sm:px-8">
+      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-20px' }}
           variants={containerVariants}
-          className="pt-6 border-t border-slate-300/80 grid grid-cols-1 sm:grid-cols-3 gap-4"
+          className="pt-6 border-t border-slate-300 grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4"
         >
           <motion.div
             variants={itemVariants}
-            className="p-4 bg-white/45 hover:bg-white/65 backdrop-blur-xs border border-slate-300/80 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1"
+            className="p-4.5 bg-white/70 hover:bg-white/90 backdrop-blur-xs border-2 border-slate-300 shadow-sm hover:border-[#B8860B] transition-all hover:-translate-y-1 flex items-start justify-between"
           >
-            <div className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
-              70%+
+            <div>
+              <div className="text-2xl sm:text-3xl font-black text-[#0A0F1D]">
+                70%+
+              </div>
+              <div className="text-xs font-extrabold uppercase tracking-wider text-[#B8860B] mt-0.5">
+                Sales Target Exceed
+              </div>
+              <div className="text-xs text-[#1E293B] mt-1 font-bold">
+                Apple India Retail CRM
+              </div>
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-[#B8860B] mt-0.5">
-              Sales Target Exceed
-            </div>
-            <div className="text-[11px] text-slate-700 mt-1 font-semibold">
-              Apple India Retail CRM
+            <div className="w-8 h-8 rounded-full bg-[#B8860B]/10 border border-[#B8860B]/30 flex items-center justify-center text-[#B8860B] shrink-0">
+              <Award className="w-4 h-4" />
             </div>
           </motion.div>
 
           <motion.div
             variants={itemVariants}
-            className="p-4 bg-white/45 hover:bg-white/65 backdrop-blur-xs border border-slate-300/80 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1"
+            className="p-4.5 bg-white/70 hover:bg-white/90 backdrop-blur-xs border-2 border-slate-300 shadow-sm hover:border-[#B8860B] transition-all hover:-translate-y-1 flex items-start justify-between"
           >
-            <div className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
-              500+
+            <div>
+              <div className="text-2xl sm:text-3xl font-black text-[#0A0F1D]">
+                500+
+              </div>
+              <div className="text-xs font-extrabold uppercase tracking-wider text-[#B8860B] mt-0.5">
+                Tech Network
+              </div>
+              <div className="text-xs text-[#1E293B] mt-1 font-bold">
+                Executive &amp; Alumni Contacts
+              </div>
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-[#B8860B] mt-0.5">
-              Tech Network
-            </div>
-            <div className="text-[11px] text-slate-700 mt-1 font-semibold">
-              Executive &amp; Alumni Contacts
+            <div className="w-8 h-8 rounded-full bg-[#B8860B]/10 border border-[#B8860B]/30 flex items-center justify-center text-[#B8860B] shrink-0">
+              <Linkedin className="w-4 h-4" />
             </div>
           </motion.div>
 
           <motion.div
             variants={itemVariants}
-            className="p-4 bg-white/45 hover:bg-white/65 backdrop-blur-xs border border-slate-300/80 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1"
+            className="p-4.5 bg-white/70 hover:bg-white/90 backdrop-blur-xs border-2 border-slate-300 shadow-sm hover:border-[#B8860B] transition-all hover:-translate-y-1 flex items-start justify-between"
           >
-            <div className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
-              7+ Yrs
+            <div>
+              <div className="text-2xl sm:text-3xl font-black text-[#0A0F1D]">
+                7+ Yrs
+              </div>
+              <div className="text-xs font-extrabold uppercase tracking-wider text-[#B8860B] mt-0.5">
+                Combined Experience
+              </div>
+              <div className="text-xs text-[#1E293B] mt-1 font-bold">
+                Tech PM &amp; Client Relations
+              </div>
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-[#B8860B] mt-0.5">
-              Combined Experience
-            </div>
-            <div className="text-[11px] text-slate-700 mt-1 font-semibold">
-              Tech PM &amp; Client Relations
+            <div className="w-8 h-8 rounded-full bg-[#B8860B]/10 border border-[#B8860B]/30 flex items-center justify-center text-[#B8860B] shrink-0">
+              <CheckCircle2 className="w-4 h-4" />
             </div>
           </motion.div>
         </motion.div>

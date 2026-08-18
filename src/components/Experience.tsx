@@ -63,7 +63,9 @@ export const Experience: React.FC = () => {
         <img
           src={techBoardroomImg}
           alt="Agile War Room & Analytics Center"
-          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.05]"
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover object-center filter brightness-[1.04] contrast-[1.08] saturate-[1.06]"
           referrerPolicy="no-referrer"
         />
         {/* Dynamic Multi-Stop Gradient Overlays */}
@@ -72,50 +74,50 @@ export const Experience: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/10" />
       </motion.div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 sm:px-8">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header with Staggered Motion */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
           variants={containerVariants}
-          className="mb-16 max-w-3xl"
+          className="mb-12 sm:mb-16 max-w-3xl"
         >
           <motion.span
             variants={itemVariants}
             className="text-xs font-mono uppercase tracking-widest text-[#B8860B] block mb-2 font-bold flex items-center gap-2 drop-shadow-2xs"
           >
-            <Briefcase className="w-4 h-4" /> 02 &middot; Professional Journey
+            <Briefcase className="w-4 h-4" /> 02 &middot; Professional Trajectory
           </motion.span>
           <motion.h2
             variants={itemVariants}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight font-editorial drop-shadow-xs"
+            className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-[#0A0F1D] tracking-tight font-editorial leading-[1.15] drop-shadow-xs"
           >
             Career Timeline &amp; Measurable Impact
           </motion.h2>
           <motion.div
             variants={itemVariants}
-            className="w-16 h-1 bg-[#B8860B] mt-4 mb-3 shadow-xs"
+            className="w-16 h-1.5 bg-[#B8860B] mt-4 mb-3 shadow-xs"
           />
           <motion.p
             variants={itemVariants}
-            className="text-base text-slate-900 max-w-2xl leading-relaxed font-medium"
+            className="text-base sm:text-lg text-[#0A0F1D] max-w-2xl leading-relaxed font-medium"
           >
             A track record spanning agile project management, technical governance, and high-volume commercial revenue growth across multinational organizations.
           </motion.p>
         </motion.div>
 
         {/* Vertical Timeline */}
-        <div className="relative mb-24">
+        <div className="relative mb-20 sm:mb-24">
           {/* Vertical central line (Desktop) / Left line (Mobile) */}
-          <div className="absolute top-4 bottom-4 left-4 md:left-1/2 -translate-x-1/2 w-[2px] bg-slate-300/90 pointer-events-none" />
+          <div className="absolute top-4 bottom-4 left-4 md:left-1/2 -translate-x-1/2 w-[2px] bg-slate-300 pointer-events-none" />
 
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={containerVariants}
-            className="space-y-12"
+            className="space-y-8 sm:space-y-12"
           >
             {profileData.experiences.map((exp, index) => {
               const isEven = index % 2 === 0;
@@ -126,11 +128,11 @@ export const Experience: React.FC = () => {
                   variants={itemVariants}
                   className={`relative flex flex-col md:flex-row items-start ${
                     isEven ? 'md:flex-row-reverse' : ''
-                  } gap-6 md:gap-12 pl-12 md:pl-0`}
+                  } gap-6 md:gap-12 pl-10 sm:pl-12 md:pl-0`}
                 >
                   {/* Timeline Badge Node */}
-                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-6 w-9 h-9 bg-white/95 border-2 border-[#0F172A] flex items-center justify-center z-10 shadow-sm transition-transform hover:scale-110">
-                    <span className="font-mono text-xs font-bold text-[#B8860B]">
+                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-6 w-9 h-9 bg-white border-2 border-[#0A0F1D] flex items-center justify-center z-10 shadow-sm transition-transform hover:scale-110">
+                    <span className="font-mono text-xs font-black text-[#B8860B]">
                       0{index + 1}
                     </span>
                   </div>
@@ -142,7 +144,7 @@ export const Experience: React.FC = () => {
                   <div className="w-full md:w-1/2">
                     <motion.div
                       whileHover={{ y: -3, transition: { duration: 0.25 } }}
-                      className="group border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs hover:border-[#B8860B] p-6 sm:p-8 transition-all duration-300 shadow-xs relative"
+                      className="group border-2 border-slate-300 bg-white/75 hover:bg-white/95 backdrop-blur-xs hover:border-[#B8860B] p-5 sm:p-7 md:p-8 transition-all duration-300 shadow-sm relative"
                     >
                       {/* Top Gold Corner Accent on Hover */}
                       <div className="absolute top-0 right-0 w-8 h-8 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
@@ -150,7 +152,7 @@ export const Experience: React.FC = () => {
                       </div>
 
                       {/* Card Top Meta */}
-                      <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-slate-300/80">
+                      <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-300">
                         <div className="flex items-center gap-3">
                           {/* Logo Badge */}
                           <div
@@ -165,10 +167,10 @@ export const Experience: React.FC = () => {
                             )}
                           </div>
                           <div>
-                            <span className="text-xl font-bold text-[#0F172A] group-hover:text-[#B8860B] transition-colors block">
+                            <span className="text-lg sm:text-xl font-black text-[#0A0F1D] group-hover:text-[#B8860B] transition-colors block leading-tight">
                               {exp.company}
                             </span>
-                            <span className="text-xs font-mono text-slate-700 font-medium">
+                            <span className="text-xs font-mono text-slate-700 font-bold">
                               {exp.type}
                             </span>
                           </div>
@@ -176,23 +178,23 @@ export const Experience: React.FC = () => {
 
                         {/* Work Mode Pill */}
                         <div className="flex items-center gap-2">
-                          <span className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/80 border border-slate-300 text-[#0F172A] font-bold group-hover:border-[#B8860B]/60 transition-colors shadow-2xs">
+                          <span className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white border border-slate-300 text-[#0A0F1D] font-bold group-hover:border-[#B8860B]/60 transition-colors shadow-2xs">
                             {exp.workMode}
                           </span>
                         </div>
                       </div>
 
                       {/* Role & Period */}
-                      <div className="mb-4">
-                        <h3 className="text-2xl font-bold text-[#0F172A] mb-1 font-editorial">
+                      <div className="mb-3.5">
+                        <h3 className="text-xl sm:text-2xl font-black text-[#0A0F1D] mb-1 font-editorial">
                           {exp.role}
                         </h3>
                         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono text-slate-700">
-                          <span className="flex items-center gap-1 font-semibold">
+                          <span className="flex items-center gap-1 font-bold text-[#0A0F1D]">
                             <Calendar className="w-3.5 h-3.5 text-[#B8860B]" />
                             {exp.period}
                           </span>
-                          <span className="flex items-center gap-1 font-semibold">
+                          <span className="flex items-center gap-1 font-bold text-slate-700">
                             <MapPin className="w-3.5 h-3.5 text-[#B8860B]" />
                             {exp.location}
                           </span>
@@ -201,22 +203,22 @@ export const Experience: React.FC = () => {
 
                       {/* Summary */}
                       {exp.summary && (
-                        <p className="text-sm text-slate-900 mb-4 leading-relaxed font-normal">
+                        <p className="text-xs sm:text-sm text-[#1E293B] mb-4 leading-relaxed font-medium">
                           {exp.summary}
                         </p>
                       )}
 
                       {/* Key Accomplishments Highlights */}
                       {exp.accomplishments && exp.accomplishments.length > 0 && (
-                        <div className="mb-4 p-3.5 bg-white/30 backdrop-blur-xs border-l-3 border-[#B8860B] border-y border-r border-slate-300/80 shadow-2xs group-hover:border-r-[#B8860B]/60 transition-colors">
-                          <span className="text-[11px] font-mono uppercase tracking-wider text-[#B8860B] font-bold block mb-1.5 flex items-center gap-1.5">
+                        <div className="mb-4 p-3.5 bg-white/60 backdrop-blur-xs border-l-4 border-[#B8860B] border-y border-r border-slate-300 shadow-2xs group-hover:border-r-[#B8860B]/60 transition-colors">
+                          <span className="text-[11px] font-mono uppercase tracking-wider text-[#B8860B] font-black block mb-1.5 flex items-center gap-1.5">
                             <Award className="w-3.5 h-3.5" /> Key Accomplishments
                           </span>
-                          <ul className="space-y-1.5 text-xs text-[#0F172A]">
+                          <ul className="space-y-1.5 text-xs text-[#0A0F1D]">
                             {exp.accomplishments.map((acc, i) => (
                               <li key={i} className="flex items-start gap-2">
                                 <span className="w-1.5 h-1.5 bg-[#B8860B] shrink-0 mt-1.5" />
-                                <span className="font-semibold">{acc}</span>
+                                <span className="font-bold">{acc}</span>
                               </li>
                             ))}
                           </ul>
@@ -224,27 +226,27 @@ export const Experience: React.FC = () => {
                       )}
 
                       {/* Responsibilities Bullets */}
-                      <div className="space-y-2 mb-5">
-                        <span className="text-[11px] font-mono uppercase tracking-wider text-slate-800 block mb-1 font-bold">
+                      <div className="space-y-2 mb-4">
+                        <span className="text-[11px] font-mono uppercase tracking-wider text-[#0A0F1D] block mb-1 font-black">
                           Core Responsibilities
                         </span>
-                        <ul className="space-y-2 text-xs sm:text-sm text-slate-900">
+                        <ul className="space-y-2 text-xs sm:text-sm text-[#1E293B]">
                           {exp.bullets.map((bullet, bIdx) => (
-                            <li key={bIdx} className="flex items-start gap-2.5">
-                              <span className="w-1.5 h-1.5 bg-[#0F172A] group-hover:bg-[#B8860B] transition-colors shrink-0 mt-1.5" />
-                              <span className="leading-relaxed font-normal">{bullet}</span>
+                            <li key={bIdx} className="flex items-start gap-2">
+                              <span className="w-1.5 h-1.5 bg-[#0A0F1D] group-hover:bg-[#B8860B] transition-colors shrink-0 mt-1.5" />
+                              <span className="leading-relaxed font-medium">{bullet}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
                       {/* Skill Tags with Hover Lift */}
-                      <div className="pt-4 border-t border-slate-300/80 flex flex-wrap gap-1.5">
+                      <div className="pt-3.5 border-t border-slate-300 flex flex-wrap gap-1.5">
                         {exp.tags.map((tag) => (
                           <motion.span
                             key={tag}
                             whileHover={{ y: -1, scale: 1.02 }}
-                            className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/40 backdrop-blur-xs border border-slate-300/80 text-slate-800 font-semibold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
+                            className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white border border-slate-300 text-[#0A0F1D] font-bold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
                           >
                             {tag}
                           </motion.span>
@@ -259,10 +261,10 @@ export const Experience: React.FC = () => {
             {/* Featured Project Case Study */}
             <motion.div
               variants={itemVariants}
-              className="relative flex flex-col md:flex-row items-start md:flex-row-reverse gap-6 md:gap-12 pl-12 md:pl-0"
+              className="relative flex flex-col md:flex-row items-start md:flex-row-reverse gap-6 md:gap-12 pl-10 sm:pl-12 md:pl-0"
             >
               {/* Timeline Badge Node */}
-              <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-6 w-9 h-9 bg-[#B8860B] border-2 border-[#0F172A] flex items-center justify-center z-10 shadow-sm text-white">
+              <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-6 w-9 h-9 bg-[#B8860B] border-2 border-[#0A0F1D] flex items-center justify-center z-10 shadow-sm text-white">
                 <Sparkles className="w-4 h-4" />
               </div>
 
@@ -273,53 +275,53 @@ export const Experience: React.FC = () => {
               <div className="w-full md:w-1/2">
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="group border-2 border-[#B8860B] bg-white/25 hover:bg-white/40 backdrop-blur-xs p-6 sm:p-8 relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                  className="group border-2 border-[#B8860B] bg-white/80 hover:bg-white/95 backdrop-blur-xs p-5 sm:p-7 md:p-8 relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
                 >
                   {/* Category Banner */}
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-300/80">
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-300">
                     <div className="flex items-center gap-2">
                       <BarChart3 className="w-4 h-4 text-[#B8860B]" />
-                      <span className="text-xs font-mono uppercase tracking-widest text-[#B8860B] font-bold">
+                      <span className="text-xs font-mono uppercase tracking-widest text-[#B8860B] font-black">
                         Featured Analytical Case Study
                       </span>
                     </div>
-                    <span className="text-[11px] font-mono uppercase px-2.5 py-0.5 bg-[#B8860B]/10 text-[#B8860B] border border-[#B8860B]/30 font-bold">
+                    <span className="text-[11px] font-mono uppercase px-2.5 py-0.5 bg-[#B8860B]/15 text-[#B8860B] border border-[#B8860B]/40 font-black">
                       CapStone Project
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mb-1 font-editorial">
+                  <h3 className="text-2xl sm:text-3xl font-black text-[#0A0F1D] mb-1 font-editorial">
                     {profileData.featuredProject.title}
                   </h3>
-                  <p className="text-xs font-mono text-slate-700 mb-6 font-semibold">
+                  <p className="text-xs font-mono text-slate-700 mb-5 font-bold">
                     {profileData.featuredProject.tagline}
                   </p>
 
                   {/* Problem → Approach → Outcome */}
-                  <div className="space-y-3.5 text-xs sm:text-sm mb-6">
-                    <div className="bg-white/35 backdrop-blur-xs p-3.5 border-l-3 border-[#0F172A] border-y border-r border-slate-300/80">
-                      <strong className="font-mono text-xs uppercase tracking-wider text-[#0F172A] block mb-1 font-bold">
+                  <div className="space-y-3 text-xs sm:text-sm mb-5">
+                    <div className="bg-white/70 backdrop-blur-xs p-3.5 border-l-4 border-[#0A0F1D] border-y border-r border-slate-300">
+                      <strong className="font-mono text-xs uppercase tracking-wider text-[#0A0F1D] block mb-1 font-black">
                         1. Problem Statement
                       </strong>
-                      <p className="text-slate-900 leading-relaxed font-normal">
+                      <p className="text-[#1E293B] leading-relaxed font-medium">
                         {profileData.featuredProject.problem}
                       </p>
                     </div>
 
-                    <div className="bg-white/35 backdrop-blur-xs p-3.5 border-l-3 border-[#B8860B] border-y border-r border-slate-300/80">
-                      <strong className="font-mono text-xs uppercase tracking-wider text-[#B8860B] block mb-1 font-bold">
+                    <div className="bg-white/70 backdrop-blur-xs p-3.5 border-l-4 border-[#B8860B] border-y border-r border-slate-300">
+                      <strong className="font-mono text-xs uppercase tracking-wider text-[#B8860B] block mb-1 font-black">
                         2. Analytical Approach &amp; Execution
                       </strong>
-                      <p className="text-slate-900 leading-relaxed font-normal">
+                      <p className="text-[#1E293B] leading-relaxed font-medium">
                         {profileData.featuredProject.approach}
                       </p>
                     </div>
 
-                    <div className="bg-white/35 backdrop-blur-xs p-3.5 border-l-3 border-emerald-600 border-y border-r border-slate-300/80">
-                      <strong className="font-mono text-xs uppercase tracking-wider text-emerald-700 block mb-1 font-bold">
+                    <div className="bg-white/70 backdrop-blur-xs p-3.5 border-l-4 border-emerald-600 border-y border-r border-slate-300">
+                      <strong className="font-mono text-xs uppercase tracking-wider text-emerald-800 block mb-1 font-black">
                         3. Business Outcome &amp; ROI
                       </strong>
-                      <p className="text-slate-900 leading-relaxed font-normal">
+                      <p className="text-[#1E293B] leading-relaxed font-medium">
                         {profileData.featuredProject.outcome}
                       </p>
                     </div>
@@ -330,9 +332,9 @@ export const Experience: React.FC = () => {
                     {profileData.featuredProject.impactMetrics.map((im, i) => (
                       <div
                         key={i}
-                        className="p-2.5 bg-white/40 backdrop-blur-xs border border-slate-300/80 text-center hover:border-[#B8860B] transition-colors shadow-2xs"
+                        className="p-2.5 bg-white border border-slate-300 text-center hover:border-[#B8860B] transition-colors shadow-2xs"
                       >
-                        <div className="text-sm font-extrabold text-[#0F172A]">
+                        <div className="text-sm font-black text-[#0A0F1D]">
                           {im.value}
                         </div>
                         <div className="text-[10px] font-mono text-slate-700 uppercase font-bold">
@@ -343,12 +345,12 @@ export const Experience: React.FC = () => {
                   </div>
 
                   {/* Tools & Skills Tags */}
-                  <div className="pt-4 border-t border-slate-300/80 flex flex-wrap gap-1.5">
+                  <div className="pt-3.5 border-t border-slate-300 flex flex-wrap gap-1.5">
                     {profileData.featuredProject.skills.map((skill) => (
                       <motion.span
                         key={skill}
                         whileHover={{ y: -1, scale: 1.02 }}
-                        className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/40 backdrop-blur-xs border border-[#B8860B]/40 text-[#0F172A] font-semibold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
+                        className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white border border-[#B8860B]/40 text-[#0A0F1D] font-bold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
                       >
                         {skill}
                       </motion.span>
@@ -361,13 +363,13 @@ export const Experience: React.FC = () => {
         </div>
 
         {/* Skills Competency Matrix */}
-        <div id="skills" className="relative pt-16 border-t border-slate-300/80">
+        <div id="skills" className="relative pt-16 border-t border-slate-300">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}
             variants={containerVariants}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4"
+            className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4"
           >
             <div>
               <motion.span
@@ -378,7 +380,7 @@ export const Experience: React.FC = () => {
               </motion.span>
               <motion.h3
                 variants={itemVariants}
-                className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] font-editorial drop-shadow-xs"
+                className="text-2xl sm:text-3xl font-black text-[#0A0F1D] font-editorial drop-shadow-xs"
               >
                 Categorized Core Skills
               </motion.h3>
@@ -388,10 +390,10 @@ export const Experience: React.FC = () => {
             <motion.div variants={itemVariants} className="flex flex-wrap gap-2">
               <button
                 onClick={() => setActiveSkillCategory('all')}
-                className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider border transition-all cursor-pointer shadow-2xs ${
+                className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider border transition-all cursor-pointer shadow-2xs min-h-[40px] ${
                   activeSkillCategory === 'all'
-                    ? 'bg-[#0F172A] text-white border-[#0F172A]'
-                    : 'bg-white/40 backdrop-blur-xs text-slate-800 border-slate-300 hover:border-[#0F172A] hover:text-[#0F172A]'
+                    ? 'bg-[#0A0F1D] text-white border-[#0A0F1D]'
+                    : 'bg-white text-[#0A0F1D] border-slate-300 hover:border-[#0A0F1D]'
                 }`}
               >
                 All Skills ({allSkills.length})
@@ -400,10 +402,10 @@ export const Experience: React.FC = () => {
                 <button
                   key={cat.category}
                   onClick={() => setActiveSkillCategory(cat.category)}
-                  className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider border transition-all cursor-pointer shadow-2xs ${
+                  className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider border transition-all cursor-pointer shadow-2xs min-h-[40px] ${
                     activeSkillCategory === cat.category
                   ? 'bg-[#B8860B] text-white border-[#B8860B]'
-                  : 'bg-white/40 backdrop-blur-xs text-slate-800 border-slate-300 hover:border-[#B8860B] hover:text-[#B8860B]'
+                  : 'bg-white text-[#0A0F1D] border-slate-300 hover:border-[#B8860B]'
                   }`}
                 >
                   {cat.category}
@@ -418,7 +420,7 @@ export const Experience: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6"
           >
             {profileData.skillsByCategory.map((cat) => {
               const isSelected = activeSkillCategory === 'all' || activeSkillCategory === cat.category;
@@ -427,24 +429,24 @@ export const Experience: React.FC = () => {
                   key={cat.category}
                   variants={itemVariants}
                   whileHover={{ y: -4, transition: { duration: 0.25 } }}
-                  className={`border ${
-                    isSelected ? 'border-slate-300/70 hover:border-[#B8860B] bg-white/20 hover:bg-white/35' : 'border-slate-300/40 bg-white/10 opacity-60'
-                  } backdrop-blur-xs p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xs`}
+                  className={`border-2 ${
+                    isSelected ? 'border-slate-300 hover:border-[#B8860B] bg-white/75 hover:bg-white/95' : 'border-slate-300/40 bg-white/30 opacity-60'
+                  } backdrop-blur-xs p-5 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-sm`}
                 >
                   <div>
-                    <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-300/80">
-                      <span className="text-[11px] font-mono uppercase tracking-wider text-[#B8860B] font-bold">
+                    <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-300">
+                      <span className="text-[11px] font-mono uppercase tracking-wider text-[#B8860B] font-black">
                         {cat.badge}
                       </span>
-                      <span className="text-[11px] font-mono text-slate-700 font-bold">
+                      <span className="text-[11px] font-mono text-[#0A0F1D] font-black">
                         {cat.skills.length} Skills
                       </span>
                     </div>
 
-                    <h4 className="text-xl font-bold text-[#0F172A] mb-2 font-editorial">
+                    <h4 className="text-xl font-black text-[#0A0F1D] mb-2 font-editorial">
                       {cat.category}
                     </h4>
-                    <p className="text-xs text-slate-900 mb-6 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-[#1E293B] mb-5 leading-relaxed font-medium">
                       {cat.description}
                     </p>
 
@@ -454,7 +456,7 @@ export const Experience: React.FC = () => {
                         <motion.span
                           key={skill}
                           whileHover={{ y: -1, scale: 1.02 }}
-                          className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/40 backdrop-blur-xs border border-slate-300/80 text-slate-800 font-semibold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
+                          className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white border border-slate-300 text-[#0A0F1D] font-bold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
                         >
                           {skill}
                         </motion.span>

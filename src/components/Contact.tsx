@@ -103,9 +103,11 @@ ${formState.name}`;
         className="absolute -top-[12%] -bottom-[12%] inset-x-0 z-0 pointer-events-none will-change-transform"
       >
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=90"
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2560&q=95"
           alt="Modern Architectural Skyline"
-          className="w-full h-full object-cover object-center filter brightness-[1.03] contrast-[1.06]"
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover object-center filter brightness-[1.04] contrast-[1.08] saturate-[1.06]"
           referrerPolicy="no-referrer"
         />
         {/* Dynamic Multi-Stop Gradient Overlays: reveals rich skyline architecture while protecting text contrast */}
