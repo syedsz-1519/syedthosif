@@ -109,9 +109,9 @@ ${formState.name}`;
           referrerPolicy="no-referrer"
         />
         {/* Dynamic Multi-Stop Gradient Overlays: reveals rich skyline architecture while protecting text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/45 via-45% to-white/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_75%_at_30%_30%,_rgba(255,255,255,0.8)_0%,_rgba(255,255,255,0.35)_50%,_transparent_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-transparent to-white/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/30 via-45% to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_30%_30%,_rgba(255,255,255,0.75)_0%,_rgba(255,255,255,0.2)_50%,_transparent_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/10" />
       </motion.div>
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 sm:px-8">
@@ -163,10 +163,10 @@ ${formState.name}`;
             href={profileData.linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group border border-slate-300/90 bg-white/35 hover:bg-white/55 backdrop-blur-md hover:border-[#B8860B] p-5 flex items-center justify-between shadow-xs transition-all duration-300"
+            className="group border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs hover:border-[#B8860B] p-5 flex items-center justify-between shadow-xs transition-all duration-300"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-white/90 border border-slate-300 group-hover:border-[#B8860B] group-hover:bg-[#B8860B] text-[#0F172A] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-2xs">
+              <div className="w-12 h-12 bg-white/80 border border-slate-300 group-hover:border-[#B8860B] group-hover:bg-[#B8860B] text-[#0F172A] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-2xs">
                 <Linkedin className="w-5 h-5 transition-transform group-hover:scale-110" />
               </div>
               <div>
@@ -178,7 +178,7 @@ ${formState.name}`;
                 </span>
               </div>
             </div>
-            <div className="w-8 h-8 rounded-full bg-white/90 group-hover:bg-[#B8860B]/10 flex items-center justify-center text-slate-500 group-hover:text-[#B8860B] transition-colors shadow-2xs">
+            <div className="w-8 h-8 rounded-full bg-white/80 group-hover:bg-[#B8860B]/10 flex items-center justify-center text-slate-500 group-hover:text-[#B8860B] transition-colors shadow-2xs">
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </div>
           </motion.a>
@@ -189,10 +189,10 @@ ${formState.name}`;
             whileHover={{ y: -3, scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
             href={`mailto:${profileData.email}?subject=Project%20Management%20Inquiry%20-%20Syed%20Thousif`}
-            className="group border border-slate-300/90 bg-white/35 hover:bg-white/55 backdrop-blur-md hover:border-[#B8860B] p-5 flex items-center justify-between shadow-xs transition-all duration-300"
+            className="group border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs hover:border-[#B8860B] p-5 flex items-center justify-between shadow-xs transition-all duration-300"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-white/90 border border-slate-300 group-hover:border-[#B8860B] group-hover:bg-[#B8860B] text-[#0F172A] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-2xs">
+              <div className="w-12 h-12 bg-white/80 border border-slate-300 group-hover:border-[#B8860B] group-hover:bg-[#B8860B] text-[#0F172A] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-2xs">
                 <Mail className="w-5 h-5 transition-transform group-hover:scale-110" />
               </div>
               <div>
@@ -204,7 +204,7 @@ ${formState.name}`;
                 </span>
               </div>
             </div>
-            <div className="w-8 h-8 rounded-full bg-white/90 group-hover:bg-[#B8860B]/10 flex items-center justify-center text-slate-500 group-hover:text-[#B8860B] transition-colors shadow-2xs">
+            <div className="w-8 h-8 rounded-full bg-white/80 group-hover:bg-[#B8860B]/10 flex items-center justify-center text-slate-500 group-hover:text-[#B8860B] transition-colors shadow-2xs">
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </div>
           </motion.a>
@@ -213,10 +213,10 @@ ${formState.name}`;
           <motion.div
             variants={itemVariants}
             whileHover={{ y: -3 }}
-            className="group border border-slate-300/90 bg-white/35 hover:bg-white/55 backdrop-blur-md hover:border-[#B8860B] p-5 flex items-center justify-between shadow-xs transition-all duration-300 sm:col-span-2 lg:col-span-1"
+            className="group border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs hover:border-[#B8860B] p-5 flex items-center justify-between shadow-xs transition-all duration-300 sm:col-span-2 lg:col-span-1"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-white/90 border border-slate-300 group-hover:border-[#B8860B] group-hover:bg-[#B8860B] text-[#0F172A] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-2xs">
+              <div className="w-12 h-12 bg-white/80 border border-slate-300 group-hover:border-[#B8860B] group-hover:bg-[#B8860B] text-[#0F172A] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-2xs">
                 <MapPin className="w-5 h-5 transition-transform group-hover:scale-110" />
               </div>
               <div>
@@ -247,7 +247,7 @@ ${formState.name}`;
           >
             <div className="space-y-5">
               {/* Primary Email Card */}
-              <div className="border border-slate-300/90 bg-white/35 hover:bg-white/50 backdrop-blur-md p-6 flex flex-col justify-between shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1">
+              <div className="border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs p-6 flex flex-col justify-between shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-mono uppercase tracking-wider text-slate-800 font-bold">
                     Direct Email Address
@@ -260,7 +260,7 @@ ${formState.name}`;
                 <div className="flex items-center gap-3 pt-3 border-t border-slate-300/80">
                   <button
                     onClick={handleCopyEmail}
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 text-xs font-bold uppercase tracking-wider border border-slate-300 hover:border-[#B8860B] text-slate-800 hover:text-[#0F172A] transition-colors cursor-pointer bg-white/90 shadow-2xs"
+                    className="flex-1 flex items-center justify-center gap-2 py-2.5 text-xs font-bold uppercase tracking-wider border border-slate-300/80 hover:border-[#B8860B] text-slate-800 hover:text-[#0F172A] transition-colors cursor-pointer bg-white/40 hover:bg-white/60 backdrop-blur-xs shadow-2xs"
                   >
                     {copied ? (
                       <>
@@ -285,7 +285,7 @@ ${formState.name}`;
               </div>
 
               {/* LinkedIn Network Detail */}
-              <div className="border border-slate-300/90 bg-white/35 hover:bg-white/50 backdrop-blur-md p-6 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1">
+              <div className="border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs p-6 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-mono uppercase tracking-wider text-slate-800 font-bold">
                     Executive Network
@@ -299,7 +299,7 @@ ${formState.name}`;
                   href={profileData.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold uppercase tracking-wider border border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white transition-colors bg-white/90 shadow-2xs"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold uppercase tracking-wider border border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white transition-colors bg-white/40 hover:bg-white/60 backdrop-blur-xs shadow-2xs"
                 >
                   <Linkedin className="w-3.5 h-3.5" />
                   <span>Connect on LinkedIn</span>
@@ -308,7 +308,7 @@ ${formState.name}`;
               </div>
 
               {/* Location & Relocation */}
-              <div className="p-5 border border-slate-300/90 bg-white/35 backdrop-blur-md text-xs font-mono text-slate-900 space-y-2 shadow-xs">
+              <div className="p-5 border border-slate-300/70 bg-white/20 backdrop-blur-xs text-xs font-mono text-slate-900 space-y-2 shadow-xs">
                 <div className="flex items-center gap-2 text-slate-950">
                   <MapPin className="w-4 h-4 text-[#B8860B]" />
                   <strong className="uppercase font-bold">Location:</strong>
@@ -334,7 +334,7 @@ ${formState.name}`;
             variants={itemVariants}
             className="lg:col-span-7"
           >
-            <div className="border border-slate-300/90 bg-white/35 hover:bg-white/50 backdrop-blur-md p-8 sm:p-10 shadow-xs hover:border-slate-400 transition-colors">
+            <div className="border border-slate-300/70 bg-white/25 hover:bg-white/35 backdrop-blur-xs p-8 sm:p-10 shadow-xs hover:border-slate-400 transition-colors">
               <span className="text-xs font-mono uppercase tracking-widest text-[#B8860B] block mb-2 font-bold">
                 Send a Message
               </span>
@@ -370,7 +370,7 @@ ${formState.name}`;
                         setSubmitted(false);
                         setFormState({ name: '', email: '', subject: '', message: '' });
                       }}
-                      className="px-6 py-3 border border-slate-300 bg-white text-slate-800 text-xs font-bold uppercase tracking-wider hover:border-[#0F172A] hover:text-[#0F172A] transition-colors cursor-pointer"
+                      className="px-6 py-3 border border-slate-300/80 bg-white/40 hover:bg-white/70 backdrop-blur-xs text-slate-800 text-xs font-bold uppercase tracking-wider hover:border-[#0F172A] hover:text-[#0F172A] transition-colors cursor-pointer"
                     >
                       New Message
                     </button>
@@ -389,7 +389,7 @@ ${formState.name}`;
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                         placeholder="e.g. Jane Doe"
-                        className="w-full bg-white/90 border border-slate-300 focus:border-[#B8860B] focus:bg-white text-[#0F172A] px-4 py-3 text-sm focus:outline-hidden transition-colors shadow-2xs"
+                        className="w-full bg-white/40 hover:bg-white/60 focus:bg-white/70 backdrop-blur-xs border border-slate-300/80 focus:border-[#B8860B] text-[#0F172A] px-4 py-3 text-sm focus:outline-hidden transition-colors shadow-2xs placeholder:text-slate-500"
                       />
                     </div>
 
@@ -403,7 +403,7 @@ ${formState.name}`;
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         placeholder="jane@company.com"
-                        className="w-full bg-white/90 border border-slate-300 focus:border-[#B8860B] focus:bg-white text-[#0F172A] px-4 py-3 text-sm focus:outline-hidden transition-colors shadow-2xs"
+                        className="w-full bg-white/40 hover:bg-white/60 focus:bg-white/70 backdrop-blur-xs border border-slate-300/80 focus:border-[#B8860B] text-[#0F172A] px-4 py-3 text-sm focus:outline-hidden transition-colors shadow-2xs placeholder:text-slate-500"
                       />
                     </div>
                   </div>
@@ -418,7 +418,7 @@ ${formState.name}`;
                       value={formState.subject}
                       onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
                       placeholder="e.g. Project Manager Role / Interview Invitation"
-                      className="w-full bg-white/90 border border-slate-300 focus:border-[#B8860B] focus:bg-white text-[#0F172A] px-4 py-3 text-sm focus:outline-hidden transition-colors shadow-2xs"
+                      className="w-full bg-white/40 hover:bg-white/60 focus:bg-white/70 backdrop-blur-xs border border-slate-300/80 focus:border-[#B8860B] text-[#0F172A] px-4 py-3 text-sm focus:outline-hidden transition-colors shadow-2xs placeholder:text-slate-500"
                     />
                   </div>
 
@@ -432,7 +432,7 @@ ${formState.name}`;
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       placeholder="Describe the opportunity, project context, or inquiry..."
-                      className="w-full bg-white/90 border border-slate-300 focus:border-[#B8860B] focus:bg-white text-[#0F172A] px-4 py-3 text-sm focus:outline-hidden transition-colors resize-none shadow-2xs"
+                      className="w-full bg-white/40 hover:bg-white/60 focus:bg-white/70 backdrop-blur-xs border border-slate-300/80 focus:border-[#B8860B] text-[#0F172A] px-4 py-3 text-sm focus:outline-hidden transition-colors resize-none shadow-2xs placeholder:text-slate-500"
                     />
                   </div>
 

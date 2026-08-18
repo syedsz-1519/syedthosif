@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
             <span>{profileData.status}</span>
           </div>
           <div>
-            Typeset in Plus Jakarta Sans &amp; Newsreader &middot; &copy; {new Date().getFullYear()} Syed Thousif
+            &copy; {new Date().getFullYear()} Syed Thousif
           </div>
         </div>
       </div>

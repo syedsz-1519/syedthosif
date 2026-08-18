@@ -140,9 +140,9 @@ export const About: React.FC = () => {
           referrerPolicy="no-referrer"
         />
         {/* Dynamic Multi-Stop Gradient: reveals rich architectural depth while protecting reading contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 via-45% to-white/15" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_75%_at_25%_25%,_rgba(255,255,255,0.85)_0%,_rgba(255,255,255,0.4)_50%,_transparent_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-transparent to-white/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/30 via-45% to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_25%_25%,_rgba(255,255,255,0.75)_0%,_rgba(255,255,255,0.2)_50%,_transparent_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/10" />
       </motion.div>
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 sm:px-8">
@@ -186,10 +186,10 @@ export const About: React.FC = () => {
           variants={containerVariants}
           className="space-y-8"
         >
-          {/* Main Editorial Narrative Section with Translucent Glass Frame */}
+          {/* Main Editorial Narrative Section with Translucent Frame */}
           <motion.div
             variants={itemVariants}
-            className="border border-slate-300/90 bg-white/35 hover:bg-white/50 backdrop-blur-md hover:border-[#B8860B] p-8 sm:p-12 transition-all duration-300 shadow-xs"
+            className="border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs hover:border-[#B8860B] p-8 sm:p-12 transition-all duration-300 shadow-xs"
           >
             <span className="inline-block text-xs font-mono uppercase tracking-[0.15em] text-slate-800 mb-6 pb-2 border-b border-slate-300/80 w-full font-bold">
               Background &amp; Executive Philosophy
@@ -249,7 +249,7 @@ export const About: React.FC = () => {
             <div className="mt-10 pt-8 border-t border-slate-300/80 grid grid-cols-1 sm:grid-cols-2 gap-5">
               <motion.div
                 whileHover={{ y: -2 }}
-                className="flex items-start gap-4 p-5 bg-white/45 backdrop-blur-md border border-slate-300 hover:border-[#B8860B] transition-all shadow-2xs"
+                className="flex items-start gap-4 p-5 bg-white/30 hover:bg-white/50 backdrop-blur-xs border border-slate-300/80 hover:border-[#B8860B] transition-all shadow-2xs"
               >
                 <ShieldCheck className="w-5 h-5 text-[#B8860B] shrink-0 mt-0.5" />
                 <div>
@@ -267,7 +267,7 @@ export const About: React.FC = () => {
 
               <motion.div
                 whileHover={{ y: -2 }}
-                className="flex items-start gap-4 p-5 bg-white/45 backdrop-blur-md border border-slate-300 hover:border-[#B8860B] transition-all shadow-2xs"
+                className="flex items-start gap-4 p-5 bg-white/30 hover:bg-white/50 backdrop-blur-xs border border-slate-300/80 hover:border-[#B8860B] transition-all shadow-2xs"
               >
                 <TrendingUp className="w-5 h-5 text-[#B8860B] shrink-0 mt-0.5" />
                 <div>
@@ -288,10 +288,10 @@ export const About: React.FC = () => {
           {/* Supporting Community Leadership */}
           <motion.div
             variants={itemVariants}
-            className="border border-slate-300/90 bg-white/35 hover:bg-white/50 backdrop-blur-md hover:border-[#B8860B] p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xs transition-all duration-300"
+            className="border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs hover:border-[#B8860B] p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xs transition-all duration-300"
           >
             <div className="flex items-start gap-4">
-              <div className="p-3.5 border border-slate-300 bg-white/90 text-[#B8860B] shrink-0 shadow-2xs">
+              <div className="p-3.5 border border-slate-300/80 bg-white/40 backdrop-blur-xs text-[#B8860B] shrink-0 shadow-2xs">
                 <Sparkles className="w-5 h-5" />
               </div>
               <div>
@@ -321,7 +321,7 @@ export const About: React.FC = () => {
                 <motion.span
                   key={skill}
                   whileHover={{ y: -1, scale: 1.02 }}
-                  className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-[0.08em] bg-white/90 border border-slate-300 text-[#0F172A] hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs font-medium"
+                  className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-[0.08em] bg-white/40 backdrop-blur-xs border border-slate-300/80 text-[#0F172A] hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs font-medium"
                 >
                   {skill}
                 </motion.span>

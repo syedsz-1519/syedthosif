@@ -75,9 +75,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         />
         
         {/* Dynamic Multi-Stop Gradient Overlays: reveals personal office setup vividly while keeping text 100% legible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 via-45% to-white/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_20%_30%,_rgba(255,255,255,0.85)_0%,_rgba(255,255,255,0.35)_50%,_transparent_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-white/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/30 via-45% to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_20%_30%,_rgba(255,255,255,0.75)_0%,_rgba(255,255,255,0.2)_50%,_transparent_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/10" />
       </motion.div>
 
       <div className="relative z-10 max-w-[1200px] w-full mx-auto px-6 sm:px-8 flex-1 flex flex-col justify-center py-8">
@@ -193,7 +193,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               whileTap={{ y: 0, scale: 0.99 }}
               onClick={onOpenResume}
               id="hero-resume-btn"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 border border-slate-300 bg-white/90 backdrop-blur-md text-slate-800 hover:bg-white hover:border-[#B8860B] text-xs sm:text-sm font-bold tracking-wider uppercase transition-all cursor-pointer shadow-xs"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 border border-slate-300/80 bg-white/40 backdrop-blur-xs text-slate-800 hover:bg-white/70 hover:border-[#B8860B] text-xs sm:text-sm font-bold tracking-wider uppercase transition-all cursor-pointer shadow-xs"
             >
               <FileText className="w-4 h-4 text-[#B8860B]" />
               <span>Full Resume</span>
@@ -234,7 +234,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         >
           <motion.div
             variants={itemVariants}
-            className="p-4 bg-white/85 backdrop-blur-md border border-slate-200 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1"
+            className="p-4 bg-white/45 hover:bg-white/65 backdrop-blur-xs border border-slate-300/80 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1"
           >
             <div className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
               70%+
@@ -249,7 +249,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
           <motion.div
             variants={itemVariants}
-            className="p-4 bg-white/85 backdrop-blur-md border border-slate-200 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1"
+            className="p-4 bg-white/45 hover:bg-white/65 backdrop-blur-xs border border-slate-300/80 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1"
           >
             <div className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
               500+
@@ -264,7 +264,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
           <motion.div
             variants={itemVariants}
-            className="p-4 bg-white/85 backdrop-blur-md border border-slate-200 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1"
+            className="p-4 bg-white/45 hover:bg-white/65 backdrop-blur-xs border border-slate-300/80 shadow-xs hover:border-[#B8860B] transition-all hover:-translate-y-1"
           >
             <div className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
               7+ Yrs

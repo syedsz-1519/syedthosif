@@ -67,9 +67,9 @@ export const Experience: React.FC = () => {
           referrerPolicy="no-referrer"
         />
         {/* Dynamic Multi-Stop Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 via-45% to-white/15" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_75%_at_30%_30%,_rgba(255,255,255,0.85)_0%,_rgba(255,255,255,0.4)_50%,_transparent_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-transparent to-white/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/30 via-45% to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_30%_30%,_rgba(255,255,255,0.75)_0%,_rgba(255,255,255,0.2)_50%,_transparent_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-white/10" />
       </motion.div>
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 sm:px-8">
@@ -142,7 +142,7 @@ export const Experience: React.FC = () => {
                   <div className="w-full md:w-1/2">
                     <motion.div
                       whileHover={{ y: -3, transition: { duration: 0.25 } }}
-                      className="group border border-slate-300/90 bg-white/35 hover:bg-white/50 backdrop-blur-md hover:border-[#B8860B] p-6 sm:p-8 transition-all duration-300 shadow-xs relative"
+                      className="group border border-slate-300/70 bg-white/20 hover:bg-white/35 backdrop-blur-xs hover:border-[#B8860B] p-6 sm:p-8 transition-all duration-300 shadow-xs relative"
                     >
                       {/* Top Gold Corner Accent on Hover */}
                       <div className="absolute top-0 right-0 w-8 h-8 overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
@@ -176,7 +176,7 @@ export const Experience: React.FC = () => {
 
                         {/* Work Mode Pill */}
                         <div className="flex items-center gap-2">
-                          <span className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/90 border border-slate-300 text-[#0F172A] font-bold group-hover:border-[#B8860B]/60 transition-colors shadow-2xs">
+                          <span className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/80 border border-slate-300 text-[#0F172A] font-bold group-hover:border-[#B8860B]/60 transition-colors shadow-2xs">
                             {exp.workMode}
                           </span>
                         </div>
@@ -208,7 +208,7 @@ export const Experience: React.FC = () => {
 
                       {/* Key Accomplishments Highlights */}
                       {exp.accomplishments && exp.accomplishments.length > 0 && (
-                        <div className="mb-4 p-3.5 bg-white/45 backdrop-blur-xs border-l-3 border-[#B8860B] border-y border-r border-slate-300 shadow-2xs group-hover:border-r-[#B8860B]/60 transition-colors">
+                        <div className="mb-4 p-3.5 bg-white/30 backdrop-blur-xs border-l-3 border-[#B8860B] border-y border-r border-slate-300/80 shadow-2xs group-hover:border-r-[#B8860B]/60 transition-colors">
                           <span className="text-[11px] font-mono uppercase tracking-wider text-[#B8860B] font-bold block mb-1.5 flex items-center gap-1.5">
                             <Award className="w-3.5 h-3.5" /> Key Accomplishments
                           </span>
@@ -244,7 +244,7 @@ export const Experience: React.FC = () => {
                           <motion.span
                             key={tag}
                             whileHover={{ y: -1, scale: 1.02 }}
-                            className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/90 border border-slate-300 text-slate-800 font-semibold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
+                            className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/40 backdrop-blur-xs border border-slate-300/80 text-slate-800 font-semibold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
                           >
                             {tag}
                           </motion.span>
@@ -273,7 +273,7 @@ export const Experience: React.FC = () => {
               <div className="w-full md:w-1/2">
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="group border-2 border-[#B8860B] bg-white/40 hover:bg-white/55 backdrop-blur-md p-6 sm:p-8 relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+                  className="group border-2 border-[#B8860B] bg-white/25 hover:bg-white/40 backdrop-blur-xs p-6 sm:p-8 relative overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
                 >
                   {/* Category Banner */}
                   <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-300/80">
@@ -297,7 +297,7 @@ export const Experience: React.FC = () => {
 
                   {/* Problem → Approach → Outcome */}
                   <div className="space-y-3.5 text-xs sm:text-sm mb-6">
-                    <div className="bg-white/55 backdrop-blur-xs p-3.5 border-l-3 border-[#0F172A] border-y border-r border-slate-300/80">
+                    <div className="bg-white/35 backdrop-blur-xs p-3.5 border-l-3 border-[#0F172A] border-y border-r border-slate-300/80">
                       <strong className="font-mono text-xs uppercase tracking-wider text-[#0F172A] block mb-1 font-bold">
                         1. Problem Statement
                       </strong>
@@ -306,7 +306,7 @@ export const Experience: React.FC = () => {
                       </p>
                     </div>
 
-                    <div className="bg-white/55 backdrop-blur-xs p-3.5 border-l-3 border-[#B8860B] border-y border-r border-slate-300/80">
+                    <div className="bg-white/35 backdrop-blur-xs p-3.5 border-l-3 border-[#B8860B] border-y border-r border-slate-300/80">
                       <strong className="font-mono text-xs uppercase tracking-wider text-[#B8860B] block mb-1 font-bold">
                         2. Analytical Approach &amp; Execution
                       </strong>
@@ -315,7 +315,7 @@ export const Experience: React.FC = () => {
                       </p>
                     </div>
 
-                    <div className="bg-white/55 backdrop-blur-xs p-3.5 border-l-3 border-emerald-600 border-y border-r border-slate-300/80">
+                    <div className="bg-white/35 backdrop-blur-xs p-3.5 border-l-3 border-emerald-600 border-y border-r border-slate-300/80">
                       <strong className="font-mono text-xs uppercase tracking-wider text-emerald-700 block mb-1 font-bold">
                         3. Business Outcome &amp; ROI
                       </strong>
@@ -330,7 +330,7 @@ export const Experience: React.FC = () => {
                     {profileData.featuredProject.impactMetrics.map((im, i) => (
                       <div
                         key={i}
-                        className="p-2.5 bg-white/80 backdrop-blur-xs border border-slate-300 text-center hover:border-[#B8860B] transition-colors shadow-2xs"
+                        className="p-2.5 bg-white/40 backdrop-blur-xs border border-slate-300/80 text-center hover:border-[#B8860B] transition-colors shadow-2xs"
                       >
                         <div className="text-sm font-extrabold text-[#0F172A]">
                           {im.value}
@@ -348,7 +348,7 @@ export const Experience: React.FC = () => {
                       <motion.span
                         key={skill}
                         whileHover={{ y: -1, scale: 1.02 }}
-                        className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/90 border border-[#B8860B]/40 text-[#0F172A] font-semibold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
+                        className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/40 backdrop-blur-xs border border-[#B8860B]/40 text-[#0F172A] font-semibold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
                       >
                         {skill}
                       </motion.span>
@@ -391,7 +391,7 @@ export const Experience: React.FC = () => {
                 className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider border transition-all cursor-pointer shadow-2xs ${
                   activeSkillCategory === 'all'
                     ? 'bg-[#0F172A] text-white border-[#0F172A]'
-                    : 'bg-white/90 text-slate-800 border-slate-300 hover:border-[#0F172A] hover:text-[#0F172A]'
+                    : 'bg-white/40 backdrop-blur-xs text-slate-800 border-slate-300 hover:border-[#0F172A] hover:text-[#0F172A]'
                 }`}
               >
                 All Skills ({allSkills.length})
@@ -402,8 +402,8 @@ export const Experience: React.FC = () => {
                   onClick={() => setActiveSkillCategory(cat.category)}
                   className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider border transition-all cursor-pointer shadow-2xs ${
                     activeSkillCategory === cat.category
-                      ? 'bg-[#B8860B] text-white border-[#B8860B]'
-                      : 'bg-white/90 text-slate-800 border-slate-300 hover:border-[#B8860B] hover:text-[#B8860B]'
+                  ? 'bg-[#B8860B] text-white border-[#B8860B]'
+                  : 'bg-white/40 backdrop-blur-xs text-slate-800 border-slate-300 hover:border-[#B8860B] hover:text-[#B8860B]'
                   }`}
                 >
                   {cat.category}
@@ -428,8 +428,8 @@ export const Experience: React.FC = () => {
                   variants={itemVariants}
                   whileHover={{ y: -4, transition: { duration: 0.25 } }}
                   className={`border ${
-                    isSelected ? 'border-slate-300/90 hover:border-[#B8860B] bg-white/35 hover:bg-white/50' : 'border-slate-300/40 bg-white/20 opacity-60'
-                  } backdrop-blur-md p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xs`}
+                    isSelected ? 'border-slate-300/70 hover:border-[#B8860B] bg-white/20 hover:bg-white/35' : 'border-slate-300/40 bg-white/10 opacity-60'
+                  } backdrop-blur-xs p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xs`}
                 >
                   <div>
                     <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-300/80">
@@ -453,8 +453,8 @@ export const Experience: React.FC = () => {
                       {cat.skills.map((skill) => (
                         <motion.span
                           key={skill}
-                          whileHover={{ y: -1.5, scale: 1.03 }}
-                          className="px-2.5 py-1.5 text-xs font-semibold bg-white/90 border border-slate-300 text-[#0F172A] hover:border-[#B8860B] hover:text-[#B8860B] hover:bg-white transition-all duration-200 cursor-default shadow-2xs"
+                          whileHover={{ y: -1, scale: 1.02 }}
+                          className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-wider bg-white/40 backdrop-blur-xs border border-slate-300/80 text-slate-800 font-semibold hover:border-[#B8860B] hover:text-[#B8860B] transition-all cursor-default shadow-2xs"
                         >
                           {skill}
                         </motion.span>
